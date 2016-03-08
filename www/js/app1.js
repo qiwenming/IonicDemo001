@@ -1,5 +1,9 @@
+// Ionic Starter App
 
-
+// angular.module is a global place for creating, registering and retrieving Angular modules
+// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
+// the 2nd parameter is an array of 'requires'
+// 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers'])
 
   .run(function ($ionicPlatform) {
@@ -69,3 +73,30 @@ angular.module('starter', ['ionic', 'starter.controllers'])
    // if none of the above states are matched, use this as the fallback
    $urlRouterProvider.otherwise('/app/playlists');
    });
+
+  ////路由配置
+  //.config(function ($stateProvider, $urlRouterProvider) {
+  //  $stateProvider
+  //    .state('', {
+  //      url: '',
+  //      abstract: true,
+  //      templateUrl: ''
+  //    })
+  //    .state('001', {
+  //      url: '/001',
+  //      //templateUrl: 'templates/001table.html'
+  //      views: {
+  //        'menuContent': {
+  //          templateUrl: 'templates/001table.html',
+  //          controller: 'PlaylistCtrl'
+  //        }}
+  //    })
+  //    .state('002', {
+  //      url: '/002',
+  //      templateUrl: 'templates/002table.html'
+  //    })
+  //    .state('003', {
+  //      url: '/003',
+  //      templateUrl: 'templates/003table.html'
+  //    });
+  //});
