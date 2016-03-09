@@ -1,0 +1,32 @@
+<!--<ion-view ng-controller="AppCtrl">-->
+
+<!--<ion-header-bar class="bar-calm">-->
+<!--<h2 class="title">modal练习</h2>-->
+<!--<button class="button button-icon ion-compose" ng-click="modal.show()"></button>-->
+<!--</ion-header-bar>-->
+<!--<script id="templates/004modal_login.html" type="text/ng-template">-->
+<!--dsiofjidsaifjdsijfidjsijifdjsijidjifjoidsjifjdis<br>fdsjafjdsjafpodsojafodsa-->
+<!--fjdsjifjdisjifad-->
+<!--fsajdisjaifdjisd-->
+<!--</script>-->
+<!--</ion-view>-->
+<ion-view view-title="modal练习">
+  <ion-content>
+    <div class="buttons">
+      <button class="button button-block button-icon ion-compose" ng-click="login()">登录</button>
+    </div>
+    <h2>注意：一定要在路由中添加控制器,不然出不来<br></h2>
+    <pre class="royal-bg">
+      /路由设置
+      .config(function($stateProvider,$urlRouterProvider){
+        $stateProvider
+          .state('004',{
+            url:'/004',
+            templateUrl:"templates/004modal.html",
+            controller:"AppCtrl"
+          });
+        $urlRouterProvider.otherwise('004');
+      });
+    </pre>
+  </ion-content>
+</ion-view>

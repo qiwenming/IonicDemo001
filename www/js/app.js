@@ -1,5 +1,3 @@
-
-
 angular.module('starter', ['ionic', 'starter.controllers'])
 
   .run(function ($ionicPlatform) {
@@ -18,4 +16,51 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     });
   })
 
-//路由设置
+  //路由设置
+  .config(function ($stateProvider, $urlRouterProvider) {
+    $stateProvider
+      .state('xxx', {
+        url: '/xxx',
+        abstract:true,
+        templateUrl: "templates/menutest.html",
+        //controller: "AppCtrl"
+      })
+      .state('xxx.modal', {
+        url: '/modal',
+        views: {
+          'menuContent': {
+            templateUrl: "templates/004modal.html",
+            controller: "AppCtrl"
+          }
+        }
+      })
+      .state('xxx.table1', {
+        url: '/table1',
+        views: {
+          'menuContent': {
+            templateUrl: "templates/001table.html",
+            controller: "AppCtrl"
+          }
+        }
+      })
+      .state('xxx.table2', {
+        url: '/table2',
+        views: {
+          'menuContent': {
+            templateUrl: "templates/002table.html",
+            controller: "AppCtrl"
+          }
+        }
+      })
+      .state('xxx.table3', {
+        url: '/table3',
+        views: {
+          'menuContent': {
+            templateUrl: "templates/003table.html",
+            controller: "AppCtrl"
+          }
+        }
+    });
+    $urlRouterProvider.otherwise('/xxx/modal');
+  })
+;
