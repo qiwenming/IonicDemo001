@@ -21,35 +21,74 @@ angular.module('starter.controllers', [])
         $scope.closeLogin();
       },1500);
     };
+
+  })
+
+  .controller('tableCtrl',function($scope,$ionicModal, $timeout){
+
+    $scope.constan = {};
+
+    $ionicModal.fromTemplateUrl('templates/001addconst.html',{
+      scope:$scope
+    }).then(function(modal){
+      $scope.modal = modal;
+    });
+
+    $scope.addConstanctxm = function(){
+      $scope.modal.show();
+    };
+    $scope.closeAdd = function(){
+      $scope.modal.hide();
+    };
+
+
+    //===========查找=============
+
     $scope.findConstanctxm = function(){
       alert('开始查找联系人');
       var options      = new ContactFindOptions();
-      options.filter   = "小";
+      //options.filter   = "Bob";
       options.multiple = true;
       //options.desiredFields = [navigator.contacts.fieldType.id];
       options.hasPhoneNumber = true;
-      //var fields       = [navigator.contacts.fieldType.displayName, navigator.contacts.fieldType.name,navigator.contacts.phoneNumber];
-      //navigator.contacts.find(fields, onSuccess, onError, options);
-      navigator.contacts.find(fields, onSuccess, onError, null);
+      var fields       = [
+        navigator.contacts.fieldType.id,
+        navigator.contacts.fieldType.name,
+        navigator.contacts.fieldType.phoneNumbers,
+        navigator.contacts.fieldType.displayName
+
+      ];
+      navigator.contacts.find(fields, onSuccess, onError, options);
     };
 
     function onSuccess(contacts) {
       $scope.count1 = contacts.length;
       $scope.constactss = contacts;
-
       //alert('Found ' + contacts.length + ' contacts.');
-      //console.log("Formatted: "  + contacts[0].name.formatted       + "\n" +
-      //  "Family Name: "  + contacts[0].name.familyName      + "\n" +
-      //  "Given Name: "   + contacts[0].name.givenName       + "\n" +
-      //  "Middle Name: "  + contacts[0].name.middleName      + "\n" +
-      //  "Suffix: "       + contacts[0].name.honorificSuffix + "\n" +
-      //  "Prefix: "       + contacts[0].name.honorificSuffix);
+      for (var i=0;i<contacts.length;i++){
+        console.log(i+"----"+contacts[i].id+"-"+contacts[i].name.familyName+"--"+contacts[0].phoneNumbers[0].value);
+      }
     }
 
     function onError(contactError) {
       alert('onError!');
     }
-  });
+
+    //=====================添加======================
+    $scope.doAdd = function(){
+      //window.plugins.toast.showShortCenter('ojdjfdjs');
+      alert('doAdd--'+$scope.constan.name1+"--"+$scope.constan.phone);
+      var contact = navigator.contacts.create();
+      contact.displayName = $scope.name1;
+      contact.note = '小明';
+      var phoneNumbers = [];
+      phoneNumbers[0] = new ContactField('mobile', $scope.phone, true); // preferred number
+      contact.phoneNumbers = phoneNumbers;
+      window.plugins.toast.showShortBottom(contact.displayName+"--"+contact.phoneNumbers[0].value+"---"+contact.note);
+      contact.save();
+    }
+  })
+;
 
 
 

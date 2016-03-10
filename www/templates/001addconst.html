@@ -1,0 +1,26 @@
+<ion-modal-view>
+  <ion-header-bar class="bar-balanced">
+    <h2 class="title">添加联系人</h2>
+    <div class="buttons">
+      <button class="button ion-close" ng-click="closeAdd()"></button>
+
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <form ng-submit="doAdd()">
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">姓名</span>
+          <input type="text" ng-model="constan.name1"/>
+        </label>
+        <label class="item item-input">
+          <span class="input-label">电话</span>
+          <input type="number" ng-model="constan.phone"/>
+        </label>
+        <span class="item">
+          <button class="button button-block button-royal" type="添加">submit</button>
+        </span>
+      </div>
+    </form>
+  </ion-content>
+</ion-modal-view>

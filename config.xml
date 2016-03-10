@@ -16,6 +16,17 @@
   <preference name="BackupWebStorage" value="none"/>
   <preference name="SplashScreen" value="screen"/>
   <preference name="SplashScreenDelay" value="3000"/>
+
+  <feature name="debug-server" required="true">
+    <param name="domain" value="http://192.168.0.107"/>
+    <param name="key" value="com.qwm.ionic"/>
+  </feature>
+
+  <!-- for Android -->
+  <feature name="Toast">
+    <param name="android-package" value="nl.xservices.plugins.Toast" />
+  </feature>
+
   <feature name="StatusBar">
     <param name="ios-package" value="CDVStatusBar" onload="true"/>
   </feature>

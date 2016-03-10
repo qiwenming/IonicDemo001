@@ -39,7 +39,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         views: {
           'menuContent': {
             templateUrl: "templates/001table.html",
-            controller: "AppCtrl"
+            controller: "tableCtrl"
           }
         }
       })
@@ -57,7 +57,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         views: {
           'menuContent': {
             templateUrl: "templates/003table.html",
-            controller: "AppCtrl"
+            controller: "tableCtrl"
           }
         }
     });

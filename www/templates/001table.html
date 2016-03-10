@@ -1,40 +1,38 @@
-<ion-view view-title="联系人">
+<!--<ion-view view-title="联系人">-->
+  <ion-scroll  view-title="联系人">
   <br>
   <br>
   <br>
-  <button ng-click="findConstanctxm()">查找联系人</button>
+    <button ng-click="findConstanctxm()">查找联系人</button>
+    <button ng-click="addConstanctxm()">添加联系人</button>
+    <!--<button ng-click="removeConstanctxm()">删除联系人</button>-->
   {{count1}}<br>
-  <!--<div class="list">-->
-    <!--<ion-list class="ios-list">-->
-      <!--<ion-item class="item item-assertive" ng-repeat="contanct in constactss">-->
-        <!--{{-->
-          <!--contanct.toString()  +"&#45;&#45;&#45;&#45;"+-->
-          <!--contanct.id     +"&#45;&#45;&#45;&#45;"+-->
-          <!--contanct.name +"&#45;&#45;&#45;&#45;"+-->
-          <!--contanct.nickname +"&#45;&#45;&#45;&#45;"+-->
-          <!--contanct.phoneNumbers-->
-        <!--}}-->
-      <!--</ion-item>-->
-    <!--</ion-list>-->
+    <div  class="item" ng-repeat="contanct in constactss">
+        {{
+        contanct.id +"----"+
+        contanct.name.familyName +"----"+
+        contanct.phoneNumbers[0].value
+        }}
+    </div>
+  </ion-scroll>
+
+  <!--<div class="button">-->
+  <!--{{-->
+  <!--constactss[0].toString()  +"&#45;&#45;&#45;&#45;"+-->
+  <!--constactss[0].id     +"&#45;&#45;&#45;&#45;"+-->
+  <!--constactss[0].displayName +"&#45;&#45;&#45;&#45;"+-->
+  <!--constactss[0].nickname +"&#45;&#45;&#45;&#45;"+-->
+  <!--constactss[0].phoneNumbers[0] +"&#45;&#45;&#45;&#45;"+-->
+  <!--constactss[0].emails[0] +"&#45;&#45;&#45;&#45;"+-->
+  <!--constactss[0].addresses[0] +"&#45;&#45;&#45;&#45;"+-->
+  <!--constactss[0].organizations[0] +"&#45;&#45;&#45;&#45;"+-->
+  <!--constactss[0].birthday +"&#45;&#45;&#45;&#45;"+-->
+  <!--constactss[0].note +"&#45;&#45;&#45;&#45;"+-->
+  <!--constactss[0].photos +"&#45;&#45;&#45;&#45;"+-->
+  <!--constactss[0].categories[0] +"&#45;&#45;&#45;&#45;"+-->
+  <!--constactss[0].url-->
+  <!--}}-->
   <!--</div>-->
 
-  <div class="button">
-    {{
-    constactss[0].toString()  +"----"+
-    constactss[0].id     +"----"+
-    constactss[0].displayName +"----"+
-    constactss[0].nickname +"----"+
-    constactss[0].phoneNumbers +"----"+
-    constactss[0].emails +"----"+
-    constactss[0].addresses +"----"+
-    constactss[0].organizations +"----"+
-    constactss[0].birthday +"----"+
-    constactss[0].note +"----"+
-    constactss[0].photos +"----"+
-    constactss[0].categories +"----"+
-    constactss[0].url
-    }}
-  </div>
-
-</ion-view>
+<!--</ion-view>-->
 
