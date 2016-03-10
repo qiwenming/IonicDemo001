@@ -48,7 +48,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         views: {
           'menuContent': {
             templateUrl: "templates/002table.html",
-            controller: "AppCtrl"
+            controller: "tableCtrl"
           }
         }
       })
