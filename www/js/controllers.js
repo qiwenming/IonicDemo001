@@ -76,28 +76,43 @@ angular.module('starter.controllers', [])
 
     //=====================添加======================
     $scope.doAdd = function(){
-      ////window.plugins.toast.showShortCenter('ojdjfdjs');
-      //alert('doAdd--'+$scope.constan.name1+"--"+$scope.constan.phone);
-      //var contact = navigator.contacts.create();
-      //contact.displayName = $scope.constan.name1;
-      //contact.note = '小明';
-      //var phoneNumbers = [];
-      //phoneNumbers[0] = new ContactField('mobile', $scope.constan.phone, true); // preferred number
-      //contact.phoneNumbers = phoneNumbers;
-      //window.plugins.toast.showShortBottom(contact.displayName+"--"+contact.phoneNumbers[0].value+"---"+contact.note);
-      //contact.save();
+      //window.plugins.toast.showShortCenter('ojdjfdjs');
+      alert('doAdd--'+$scope.constan.name1+"--"+$scope.constan.phone);
+      var contact = navigator.contacts.create();
+      contact.displayName = $scope.constan.name1;
+      contact.note = '小明';
+      var phoneNumbers = [];
+      phoneNumbers[0] = new ContactField('mobile', $scope.constan.phone, true); // preferred number
+      contact.phoneNumbers = phoneNumbers;
+      window.plugins.toast.showShortBottom(contact.displayName+"--"+contact.phoneNumbers[0].value+"---"+contact.note);
+      contact.save();
 
-      for (var i=10;i<100;i++){
+      //for (var i=10;i<100;i++){
+      //  var contanct1 = navigator.contacts.create();
+      //  contanct1.displayName = "xiaoming"+i;
+      //  contanct1.note = '小明'+i;
+      //  var phoneNumbers = [];
+      //  phoneNumbers[0] = new ContactField('mobile', "1326629"+i+"9", true); // preferred number
+      //  contanct1.phoneNumbers = phoneNumbers;
+      //  contanct1.save();
+      //}
+      //window.plugins.toast.showShortCenter('ok');
+    };
+    $scope.removeContan = function(){
         var contanct1 = navigator.contacts.create();
-        contanct1.displayName = "xiaoming"+i;
-        contanct1.note = '小明'+i;
         var phoneNumbers = [];
-        phoneNumbers[0] = new ContactField('mobile', "1326629"+i+"9", true); // preferred number
+        phoneNumbers[0] = new ContactField('mobile', $scope.constan.phone, true); // preferred number
         contanct1.phoneNumbers = phoneNumbers;
-        contanct1.save();
-      }
-      window.plugins.toast.showShortCenter('ok');
+        contanct1.remove(onSuccessRemove,contactError);
+    };
+    function onSuccessRemove() {
+      alert("Removal Success");
     }
+
+    function onErrorRemove(contactError) {
+      alert("Error = " + contactError.code);
+    }
+
   })
 ;
 
