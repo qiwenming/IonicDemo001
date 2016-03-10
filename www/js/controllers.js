@@ -26,10 +26,11 @@ angular.module('starter.controllers', [])
       var options      = new ContactFindOptions();
       options.filter   = "小";
       options.multiple = true;
-      options.desiredFields = [navigator.contacts.fieldType.id];
+      //options.desiredFields = [navigator.contacts.fieldType.id];
       options.hasPhoneNumber = true;
-      var fields       = [navigator.contacts.fieldType.displayName, navigator.contacts.fieldType.name];
-      navigator.contacts.find(fields, onSuccess, onError, options);
+      //var fields       = [navigator.contacts.fieldType.displayName, navigator.contacts.fieldType.name,navigator.contacts.phoneNumber];
+      //navigator.contacts.find(fields, onSuccess, onError, options);
+      navigator.contacts.find(fields, onSuccess, onError, null);
     };
 
     function onSuccess(contacts) {
