@@ -79,10 +79,10 @@ angular.module('starter.controllers', [])
       //window.plugins.toast.showShortCenter('ojdjfdjs');
       alert('doAdd--'+$scope.constan.name1+"--"+$scope.constan.phone);
       var contact = navigator.contacts.create();
-      contact.displayName = $scope.name1;
+      contact.displayName = $scope.constan.name1;
       contact.note = '小明';
       var phoneNumbers = [];
-      phoneNumbers[0] = new ContactField('mobile', $scope.phone, true); // preferred number
+      phoneNumbers[0] = new ContactField('mobile', $scope.constan.phone, true); // preferred number
       contact.phoneNumbers = phoneNumbers;
       window.plugins.toast.showShortBottom(contact.displayName+"--"+contact.phoneNumbers[0].value+"---"+contact.note);
       contact.save();
